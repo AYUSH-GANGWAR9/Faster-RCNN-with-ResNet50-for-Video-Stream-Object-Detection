@@ -9,8 +9,8 @@ from eval import process_video_stream, evaluate_model
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='FRCNN-ResNet50 for Video Stream Object Detection')
-    parser.add_argument('--dataset_path', type=str, default=r'C:\Users\gangw\Desktop\New folder (2)\data\davis', help='Path to DAVIS dataset')
-    parser.add_argument('--resized_dataset_path', type=str, default=r'C:\Users\gangw\Desktop\New folder (2)\data\davis_resized', help='Path to save resized dataset')
+    parser.add_argument('--dataset_path', type=str, default=r'C:\Users\gangw\Desktop\Faster RCNN for video object detection\data\davis', help='Path to DAVIS dataset')
+    parser.add_argument('--resized_dataset_path', type=str, default=r'C:\Users\gangw\Desktop\Faster RCNN for video object detection\data\davis_resized', help='Path to save resized dataset')
     parser.add_argument('--resize_dataset', action='store_true', help='Resize dataset for memory efficiency')
     parser.add_argument('--target_size', type=tuple, default=(480, 270), help='Target size for resizing (width, height)')
     parser.add_argument('--model_save_path', type=str, default='./model_checkpoints', help='Path to save model checkpoints')
@@ -18,7 +18,7 @@ def main():
     parser.add_argument('--video_path', type=str, default=None, help='Path to test video')
     parser.add_argument('--output_path', type=str, default=None, help='Path to save output video')
     parser.add_argument('--batch_size', type=int, default=2, help='Batch size for training')
-    parser.add_argument('--num_epochs', type=int, default=10, help='Number of epochs for training')
+    parser.add_argument('--num_epochs', type=int, default=5, help='Number of epochs for training')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate')
     parser.add_argument('--accumulation_steps', type=int, default=4, help='Gradient accumulation steps')
     parser.add_argument('--mode', type=str, choices=['train', 'evaluate', 'inference'], default='train', 
